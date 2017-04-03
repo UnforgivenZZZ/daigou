@@ -1,0 +1,30 @@
+
+<div class="w3-container w3-text-grey" id="count_item">
+    <p id='numItem'></p>
+</div>
+<div class="w3-row" id="itemGrids" style="position: relative;">
+  {{#each items}}
+      <div class="halfgrid box" id="grid">
+        <div class="w3-display-container img-responsive" style="width:100%;">
+          <a href="http://100.83.14.1:8080{{dir}}"><img class="itemImg" id={{dir}} src="{{dir}}{{picture}}" style="width:100%;"></a>
+        </div>
+          <p style="text-align: center;">{{des}}<br><b>{{price}}</b>
+          <!-- <button type="button" class="w3-btn-floating w3-teal" style="z-index: 0; display:none;" onclick="add_to_chart()">+</button> --></p>
+      </div>
+  {{/each}}
+
+</div>
+
+
+
+
+<script type="text/javascript" src="js/waterfall.js">
+      var num = document.getElementById("count_item").getElementsByTagName("*");
+      // console.log(num.innerHTML);
+      for(var i = 0; i < num.length; i++){
+        if(num[i].id == "numItem"){
+          num[i].innerHTML = grid.length + " items";
+          break;
+        }
+      }
+</script>
